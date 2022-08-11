@@ -24,6 +24,12 @@ INSERT INTO animals (name, date_of_birth, escape_attempts, neutered, weight_kg) 
 
 INSERT INTO animals (name, date_of_birth, escape_attempts, neutered, weight_kg) VALUES('Ditto', '2022-05-14', 4, 'yes', 22);
 
+BEGIN;
 
+UPDATE animals
+SET species = 'Digimon' WHERE name LIKE '%mon%';
 
+UPDATE animals
+SET species = 'Pokemon' WHERE name NOT LIKE '%mon%';
 
+COMMIT;
