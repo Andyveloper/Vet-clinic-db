@@ -24,6 +24,7 @@ INSERT INTO animals (name, date_of_birth, escape_attempts, neutered, weight_kg) 
 
 INSERT INTO animals (name, date_of_birth, escape_attempts, neutered, weight_kg) VALUES('Ditto', '2022-05-14', 4, 'yes', 22);
 
+-- TRANSACTION COMPLETE
 BEGIN;
 
 UPDATE animals
@@ -33,3 +34,12 @@ UPDATE animals
 SET species = 'Pokemon' WHERE name NOT LIKE '%mon%';
 
 COMMIT;
+
+-- DELETE EVERYTHING FROM TABLE AND ROLLBACK
+BEGIN;
+
+DELETE FROM animals;
+
+SELECT * FROM animals;
+
+ROLLBACK;
