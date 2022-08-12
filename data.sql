@@ -54,3 +54,34 @@ ROLLBACK TO SAVEPOINT no2022;
 UPDATE animals SET weight_kg = weight_kg * -1 WHERE weight_kg < 0;
 
 COMMIT;
+
+-- ADD OWNERS AND SPECIES IDS TO ANIMALS TABLE
+
+BEGIN;
+UPDATE animals
+SET species_id = 2 WHERE name LIKE '%mon%';
+
+UPDATE animals
+SET species_id = 1 WHERE name NOT LIKE '%mon%';
+
+SAVEPOINT speciesWorking;
+
+UPDATE animals
+SET owner_id = (CASE WHEN name = 'Agumon' THEN 1
+WHEN name = 'Gabumon' THEN 2
+WHEN name = 'Gabumon' THEN 2
+WHEN name = 'Pikachu' THEN 2
+WHEN name = 'Devilmon' THEN 3
+WHEN name = 'Plantmon' THEN 3
+WHEN name = 'Charmander' THEN 4
+WHEN name = 'Squirtle' THEN 4
+WHEN name = 'Blossom' THEN 4
+WHEN name = 'Angemon' THEN 5
+WHEN name = 'Boarmon' THEN 5
+end);
+
+SAVEPOINT ownerWorking;
+
+SELECT * FROM animals;
+
+COMMIT;
