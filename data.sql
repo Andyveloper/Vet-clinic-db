@@ -97,10 +97,10 @@ INSERT INTO vets (name, age, date_of_graduation)
 
 INSERT INTO specializations (species_id, vets_id)
   VALUES(1, 1),
-  (2, NULL),
-  (3, 1),
-  (3, 2),
-  (4, 2);
+  (NULL, 2),
+  (1, 3),
+  (2, 3),
+  (2,4);
 
 INSERT INTO visits (animals_id, vets_id, date_of_visit)
   VALUES(1, 1, '2020-05-24'),
