@@ -34,3 +34,21 @@ ADD COLUMN species_id INT REFERENCES species(id);
 ALTER TABLE animals
 ADD COLUMN owners_id INT REFERENCES owners(id);
 
+-- DAY 4
+
+CREATE TABLE vets(
+    id INT GENERATED ALWAYS AS IDENTITY NOT NULL PRIMARY KEY,
+    name VARCHAR(255),
+    age INT,
+    date_of_graduation DATE
+);
+
+CREATE TABLE specializations (
+    species_id INT,
+    vets_id INT
+    );
+
+CREATE TABLE visits (
+    animals_id INT,
+    vets_id INT
+    );
