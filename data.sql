@@ -85,3 +85,42 @@ SAVEPOINT ownerWorking;
 SELECT * FROM animals;
 
 COMMIT;
+
+-- DAY 4
+
+INSERT INTO vets (name, age, date_of_graduation)
+  VALUES( 'Vet. William Thatcher', 45, '2000-04-23'),
+  ('Vet. Maisy Smith', 26, '2019, 01-17'),
+  ('Vet. Stephanie Mendez', 64, '1981-05-04'),
+  ('Vet. Jack Harkness', 38, '2008-06-08')
+;
+
+INSERT INTO specializations (species_id, vets_id)
+  VALUES(1, 1),
+  (2, NULL),
+  (3, 1),
+  (3, 2),
+  (4, 2);
+
+INSERT INTO visits (animals_id, vets_id, date_of_visit)
+  VALUES(1, 1, '2020-05-24'),
+  (1, 3, '2020-07-22'),
+  (3, 4, '2021-02-02'),
+  (4, 2, '2020-01-05'),
+  (4, 2, '2020-03-08'),
+  (4, 2, '2020-05-14'),
+  (5, 3, '2021-05-04'),
+  (6, 4, '2021-02-24'),
+  (7, 2, '2019-12-21'),
+  (7, 1, '2020-08-10'),
+  (7, 2, '2021-04-07'),
+  (8, 3, '2019-09-29'),
+  (9, 4, '2020-10-03'),
+  (9, 4, '2020-11-04'),
+  (10, 2, '2019-01-24'),
+  (10, 2, '2019-05-15'),
+  (10, 2, '2020-02-27'),
+  (10, 2, '2020-08-03'),
+  (11, 3, '2020-02-27'),
+  (11, 1, '2021-01-11')
+;
